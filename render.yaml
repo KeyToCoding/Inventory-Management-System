@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: inventory-management-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: mongodb
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://inventory-management-system-dvep852.vercel.app
+
+databases:
+  - name: mongodb
+    dbName: inventory-db
+    plan: free
+    region: oregon
