@@ -96,13 +96,21 @@ Features highlighted in the dashboard:
 
 ## 🚀 Deployment
 
-Choose your preferred hosting platform:
+The frontend is ready for Netlify as a static Vite build. Use these settings in Netlify:
+
+- Build command: `npm run build`
+- Publish directory: `dist`
+- SPA redirect: `/*` → `/index.html` with status `200`
+
+The production API URL is already set in `.env.production` and points to the Render backend used by this project.
+
+You can also deploy directly from GitHub using Netlify's import flow:
 
 | Platform | Best For | Action |
 |----------|----------|--------|
-| Vercel | Recommended for React apps | [Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/KeyToCoding/Inventory-Management-System) |
-| Netlify | Great for static sites | [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/KeyToCoding/Inventory-Management-System) |
-| GitHub Pages | Free for static sites | [Deploy to GitHub Pages](https://pages.github.com/) |
+| Netlify | Static React/Vite frontend | [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/KeyToCoding/Inventory-Management-System) |
+| Vercel | Alternative static frontend hosting | [Deploy to Vercel](https://vercel.com/new/clone?repository-url=https://github.com/KeyToCoding/Inventory-Management-System) |
+| GitHub Pages | Free static hosting | [Deploy to GitHub Pages](https://pages.github.com/) |
 
 ## 🌐 Custom Domain Setup
 
