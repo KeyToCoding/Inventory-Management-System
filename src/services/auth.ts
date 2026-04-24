@@ -30,6 +30,16 @@ export interface AuthResponse {
   };
 }
 
+export interface CurrentUserResponse {
+  user: {
+    id: string;
+    name: string;
+    email: string;
+    role: string;
+    status?: string;
+  };
+}
+
 export const authService = {
   async login(credentials: LoginCredentials): Promise<AuthResponse> {
     const response = await api.post<AuthResponse>('/auth/login', {
@@ -46,8 +56,8 @@ export const authService = {
     return response.data;
   },
 
-  async getCurrentUser(): Promise<AuthResponse> {
-    const response = await api.get<AuthResponse>('/auth/me');
+  async getCurrentUser(): Promise<CurrentUserResponse> {
+    const response = await api.get<CurrentUserResponse>('/auth/me');
     return response.data;
   },
 

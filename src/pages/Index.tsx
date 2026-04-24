@@ -1,4 +1,4 @@
-'use Client';
+'use client';
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/components/ui/use-toast";
 import { Barcode, CheckCircle, LucideShield } from "lucide-react";
+import axios from "axios";
 
 export default function Index() {
   const [email, setEmail] = useState("");
@@ -31,9 +32,12 @@ export default function Index() {
       });
       navigate("/dashboard");
     } catch (error) {
+      const apiMessage = axios.isAxiosError(error)
+        ? (error.response?.data?.message as string | undefined)
+        : undefined;
       toast({
         title: "Login failed",
-        description: "Please check your credentials and try again.",
+        description: apiMessage || "Please check your credentials and try again.",
         variant: "destructive",
         duration: 5000,
       });
