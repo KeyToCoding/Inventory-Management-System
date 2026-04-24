@@ -14,8 +14,8 @@ async function resetUsers() {
     // Create new admin user
     const newUser = new User({
       name: 'Ayodhya SHG',
-      email: 'ayodhyashg04@gmail.com',
-      password: 'ayodhyashg',
+      email: 'CDO@gmail.com',
+      password: 'CDO',
       role: 'admin'
     });
 

@@ -50,9 +50,9 @@ export default function Index() {
     setIsLoading(true);
     try {
       if (role === "admin") {
-        await login({ email: "ayodhyashg04@gmail.com", password: "ayodhyashg" });
+        await login({ email: "CDO@gmail.com", password: "CDO" });
       } else {
-        await login({ email: "ayodhyashg04@gmail.com", password: "ayodhyashg" });
+        await login({ email: "CDO@gmail.com", password: "CDO" });
       }
       toast({
         title: "Demo login successful",

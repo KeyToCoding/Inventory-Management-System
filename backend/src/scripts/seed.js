@@ -12,8 +12,8 @@ const seedDatabase = async () => {
     // Create default admin user
     const adminUser = new User({
       name: 'Admin User',
-      email: 'yadavanubhav848@gmail.com',
-      password: 'anubhav040806',
+      email: 'CDO@gmail.com',
+      password: 'CDO',
       role: 'admin',
       company: 'Scanify',
       phone: '1234567890',
